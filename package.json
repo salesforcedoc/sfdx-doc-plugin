@@ -1,11 +1,33 @@
 {
   "name": "sfdx-doc-plugin",
-  "description": "A plugin for the Salesforce CLI built by Andrew Sim with commands to help accelerate your workflow and adoption of sfdx",
+  "description": "A plugin for the Salesforce CLI built by Andrew Sim with commands to help accelerate your workflow and adoption of sfdx.",
   "version": "0.0.0",
   "author": "Andrew Sim",
   "bugs": "https://github.com/salesforcedoctor/sfdx-doc-plugin/issues",
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "@oclif/command": "1",
+    "@oclif/config": "1",
+    "@oclif/errors": "1",
+    "@salesforce/command": "^1.0.1",
+    "@salesforce/core": "^1.0.1",
+    "tslib": "1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@oclif/plugin-help": "^2",
+    "@oclif/test": "^1",
+    "@salesforce/dev-config": "^1.1.4",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
+    "@types/node": "^10",
+    "chai": "^4",
+    "globby": "^8",
+    "mocha": "^5",
+    "nyc": "^13",
+    "sinon": "5",
+    "ts-node": "^7",
+    "typescript": "^3.0"
+  },
   "engines": {
     "node": ">=8.0.0"
   },

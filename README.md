@@ -1,7 +1,7 @@
 sfdx-doc-plugin
 ===============
 
-A plugin for the Salesforce CLI built by Andrew Sim with commands to help accelerate your workflow and adoption of sfdx
+A plugin for the Salesforce CLI built by Andrew Sim with commands to help accelerate your workflow and adoption of sfdx.
 
 [![Version](https://img.shields.io/npm/v/sfdx-doc-plugin.svg)](https://npmjs.org/package/sfdx-doc-plugin)
 [![CircleCI](https://circleci.com/gh/salesforcedoctor/sfdx-doc-plugin/tree/master.svg?style=shield)](https://circleci.com/gh/salesforcedoctor/sfdx-doc-plugin/tree/master)
@@ -13,9 +13,53 @@ A plugin for the Salesforce CLI built by Andrew Sim with commands to help accele
 [![License](https://img.shields.io/npm/l/sfdx-doc-plugin.svg)](https://github.com/salesforcedoctor/sfdx-doc-plugin/blob/master/package.json)
 
 <!-- toc -->
+* [Debugging your plugin](#debugging-your-plugin)
+<!-- tocstop -->
 <!-- install -->
 <!-- usage -->
+```sh-session
+$ npm install -g sfdx-doc-plugin
+$ sfdx-doc-plugin COMMAND
+running command...
+$ sfdx-doc-plugin (-v|--version|version)
+sfdx-doc-plugin/0.0.0 darwin-x64 node-v11.6.0
+$ sfdx-doc-plugin --help [COMMAND]
+USAGE
+  $ sfdx-doc-plugin COMMAND
+...
+```
+<!-- usagestop -->
 <!-- commands -->
+* [`sfdx-doc-plugin hello:org [FILE]`](#sfdx-doc-plugin-helloorg-file)
+
+## `sfdx-doc-plugin hello:org [FILE]`
+
+print a greeting and your org IDs
+
+```
+USAGE
+  $ sfdx-doc-plugin hello:org [FILE]
+
+OPTIONS
+  -f, --force                                      example boolean flag
+  -n, --name=name                                  name to print
+  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
+  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+  --apiversion=apiversion                          override the api version used for api requests made by this command
+  --json                                           format output as json
+  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
+
+EXAMPLES
+  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
+     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+     My hub org id is: 00Dxx000000001234
+  
+  $ sfdx hello:org --name myname --targetusername myOrg@example.com
+     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+```
+
+_See code: [src/commands/hello/org.ts](https://github.com/salesforcedoctor/sfdx-doc-plugin/blob/v0.0.0/src/commands/hello/org.ts)_
+<!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
 We recommend using the Visual Studio Code (VS Code) IDE for your plugin development. Included in the `.vscode` directory of this plugin is a `launch.json` config file, which allows you to attach a debugger to the node process when running your commands.
